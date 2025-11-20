@@ -1,0 +1,2 @@
+"resolution": "720x720",
+"grayscale": true,
