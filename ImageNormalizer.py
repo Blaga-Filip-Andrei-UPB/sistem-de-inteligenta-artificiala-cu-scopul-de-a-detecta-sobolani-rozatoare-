@@ -39,7 +39,7 @@ def main():
 
     os.makedirs(output_dir, exist_ok=True)
 
-    # gather files (case-insensitive)
+    # selecteaza filele cu extensiile urmatoare
     patterns = [
         "*.png", "*.PNG",
         "*.jpg", "*.JPG",
