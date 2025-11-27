@@ -11,8 +11,8 @@ import glob
 from PIL import Image
 
 # <<< PATH >>>
-input_dir = "C:/Users/Heisenberg/Downloads/sistem-de-inteligenta-artificiala-cu-scopul-de-a-detecta-sobolani-rozatoare--main/data/raw"
-output_dir = "C:/Users/Heisenberg/Downloads/sistem-de-inteligenta-artificiala-cu-scopul-de-a-detecta-sobolani-rozatoare--main/data/processed"
+input_dir = "input/dir"
+output_dir = "output/dir"
 # <<< PATH >>>
 
 OUT_SIZE = 800
