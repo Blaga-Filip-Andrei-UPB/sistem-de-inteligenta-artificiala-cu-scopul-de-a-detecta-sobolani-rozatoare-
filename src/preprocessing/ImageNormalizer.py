@@ -9,27 +9,23 @@ apoi sa le scuipe in folderul (2) dorit
 import os
 import glob
 from PIL import Image
+import numpy as np
 
-# <<< PATH >>>
 input_dir = "input/dir"
 output_dir = "output/dir"
-# <<< PATH >>>
 
-OUT_SIZE = 800
+OUT_SIZE = 256
 
 def process_image(in_path, out_dir, size=OUT_SIZE):
     base_name = os.path.splitext(os.path.basename(in_path))[0]
     out_path = os.path.join(out_dir, base_name + ".jpg")
 
     with Image.open(in_path) as im:
-        # Converteste la grayscale (un singur canal de luminozitate)
         im = im.convert("L")
-
-        # Resize la patrat exact
         im = im.resize((size, size), Image.LANCZOS)
-
-        # Salveaza ca grayscale JPEG
-        im.save(out_path, format="JPEG", quality=95, optimize=True)
+        im_array = np.array(im) / 255.0
+        normalized_im = Image.fromarray((im_array * 255).astype(np.uint8))
+        normalized_im.save(out_path, format="JPEG", quality=95, optimize=True)
 
     return out_path
 
@@ -39,7 +35,6 @@ def main():
 
     os.makedirs(output_dir, exist_ok=True)
 
-    # selecteaza filele cu extensiile urmatoare
     patterns = [
         "*.png", "*.PNG",
         "*.jpg", "*.JPG",
