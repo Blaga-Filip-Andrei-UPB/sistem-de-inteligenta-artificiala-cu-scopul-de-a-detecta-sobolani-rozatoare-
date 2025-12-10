@@ -35,3 +35,10 @@ project-name/
 ```
 
 ---
+
+## Tabelul Nevoie Reală → Soluție SIA → Modul Software
+
+| **Nevoie reală concretă** | **Cum o rezolvă SIA-ul vostru** | **Modul software responsabil** |
+|---------------------------|--------------------------------|--------------------------------|
+| Nevoia de a gasii sobolani in campul vizual | SIA arata unde sunt detectati sobolani in imagine / etc. | Retea Neuronala |
+| Nevoia de a ne asigura ca nu exista sobolani undeva | SIA arata ca nu sunt detectati sobolani | Retea Neuronala |
