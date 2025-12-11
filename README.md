@@ -42,3 +42,26 @@ project-name/
 |---------------------------|--------------------------------|--------------------------------|
 | Nevoia de a gasii sobolani in campul vizual | SIA arata unde sunt detectati sobolani in imagine / etc. | Retea Neuronala |
 | Nevoia de a ne asigura ca nu exista sobolani undeva | SIA arata ca nu sunt detectati sobolani | Retea Neuronala |
+
+```markdown
+### Contribuția originală la setul de date:
+
+**Total observații finale:** [N] (după Etapa 3 + Etapa 4)
+**Observații originale:** [M] ([X]%)
+
+**Tipul contribuției:**
+[ ] Date generate prin simulare fizică  
+[ ] Date achiziționate cu senzori proprii  
+[X] Etichetare/adnotare manuală  
+[ ] Date sintetice prin metode avansate  
+
+**Descriere detaliată:**
+Am etichetat imaginile incat sa putem clasifica exact UNDE se afla sobolanul in imagine, le-am etichetat dupa corpul sobolanului intreg si dupa fata rozatoarelor
+
+**Locația codului:** `https://www.makesense.ai/`
+**Locația datelor:** `data/generated/`
+
+**Dovezi:**
+- CSV-ul e la dispozitie cand vrei sa te uiti la el, nu stiu ce dovada mai buna ai vrea. Screenshot c ale-am facut? Ok.
+```
+
