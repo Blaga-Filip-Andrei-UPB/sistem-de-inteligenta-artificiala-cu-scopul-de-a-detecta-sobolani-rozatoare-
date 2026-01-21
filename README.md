@@ -33,35 +33,111 @@ project-name/
 ├── config/                # fișiere de configurare
 └── requirements.txt       # dependențe Python (dacă aplicabil)
 ```
+---
+
+##  2. Descrierea Setului de Date
+
+### 2.1 Sursa datelor
+
+* **Origine:** [Descriere sursă date - ex: senzori robot, dataset public, simulare]
+* **Modul de achiziție:** ☐ Senzori reali / ☐ Simulare / ☐ Fișier extern / ☐ Generare programatică
+* **Perioada / condițiile colectării:** [Ex: Noiembrie 2024 - Ianuarie 2025, condiții experimentale specifice]
+
+### 2.2 Caracteristicile dataset-ului
+
+* **Număr total de observații:** [Ex: 15,000]
+* **Număr de caracteristici (features):** [Ex: 12]
+* **Tipuri de date:** ☐ Numerice / ☐ Categoriale / ☐ Temporale / ☐ Imagini
+* **Format fișiere:** ☐ CSV / ☐ TXT / ☐ JSON / ☐ PNG / ☐ Altele: [...]
+
+### 2.3 Descrierea fiecărei caracteristici
+
+| **Caracteristică** | **Tip** | **Unitate** | **Descriere** | **Domeniu valori** |
+|-------------------|---------|-------------|---------------|--------------------|
+| feature_1 | numeric | mm | [...] | 0–150 |
+| feature_2 | categorial | – | [...] | {A, B, C} |
+| feature_3 | numeric | m/s | [...] | 0–2.5 |
+| ... | ... | ... | ... | ... |
+
+**Fișier recomandat:**  `data/README.md`
 
 ---
 
-## Tabelul Nevoie Reală → Soluție SIA → Modul Software
+##  3. Analiza Exploratorie a Datelor (EDA) – Sintetic
 
-| **Nevoie reală concretă** | **Cum o rezolvă SIA-ul vostru** | **Modul software responsabil** |
-|---------------------------|--------------------------------|--------------------------------|
-| Nevoia de a gasii sobolani in campul vizual | SIA arata unde sunt detectati sobolani in imagine / etc. | Retea Neuronala |
-| Nevoia de a ne asigura ca nu exista sobolani undeva | SIA arata ca nu sunt detectati sobolani | Retea Neuronala |
+### 3.1 Statistici descriptive aplicate
 
-```markdown
-### Contribuția originală la setul de date:
+* **Medie, mediană, deviație standard**
+* **Min–max și quartile**
+* **Distribuții pe caracteristici** (histograme)
+* **Identificarea outlierilor** (IQR / percentile)
 
-**Total observații finale:** [N] (după Etapa 3 + Etapa 4)
-**Observații originale:** [M] ([X]%)
+### 3.2 Analiza calității datelor
 
-**Tipul contribuției:**
-[ ] Date generate prin simulare fizică  
-[ ] Date achiziționate cu senzori proprii  
-[X] Etichetare/adnotare manuală  
-[ ] Date sintetice prin metode avansate  
+* **Detectarea valorilor lipsă** (% pe coloană)
+* **Detectarea valorilor inconsistente sau eronate**
+* **Identificarea caracteristicilor redundante sau puternic corelate**
 
-**Descriere detaliată:**
-Am etichetat imaginile incat sa putem clasifica exact UNDE se afla sobolanul in imagine, le-am etichetat dupa corpul sobolanului intreg si dupa fata rozatoarelor
+### 3.3 Probleme identificate
 
-**Locația codului:** `https://www.makesense.ai/`
-**Locația datelor:** `data/generated/`
+* [exemplu] Feature X are 8% valori lipsă
+* [exemplu] Distribuția feature Y este puternic neuniformă
+* [exemplu] Variabilitate ridicată în clase (class imbalance)
 
-**Dovezi:**
-- CSV-ul e la dispozitie cand vrei sa te uiti la el, nu stiu ce dovada mai buna ai vrea. Screenshot c ale-am facut? Ok.
-```
+---
 
+##  4. Preprocesarea Datelor
+
+### 4.1 Curățarea datelor
+
+* **Eliminare duplicatelor**
+* **Tratarea valorilor lipsă:**
+  * Feature A: imputare cu mediană
+  * Feature B: eliminare (30% valori lipsă)
+* **Tratarea outlierilor:** IQR / limitare percentile
+
+### 4.2 Transformarea caracteristicilor
+
+* **Normalizare:** Min–Max / Standardizare
+* **Encoding pentru variabile categoriale**
+* **Ajustarea dezechilibrului de clasă** (dacă este cazul)
+
+### 4.3 Structurarea seturilor de date
+
+**Împărțire recomandată:**
+* 70–80% – train
+* 10–15% – validation
+* 10–15% – test
+
+**Principii respectate:**
+* Stratificare pentru clasificare
+* Fără scurgere de informație (data leakage)
+* Statistici calculate DOAR pe train și aplicate pe celelalte seturi
+
+### 4.4 Salvarea rezultatelor preprocesării
+
+* Date preprocesate în `data/processed/`
+* Seturi train/val/test în foldere dedicate
+* Parametrii de preprocesare în `config/preprocessing_config.*` (opțional)
+
+---
+
+##  5. Fișiere Generate în Această Etapă
+
+* `data/raw/` – date brute
+* `data/processed/` – date curățate & transformate
+* `data/train/`, `data/validation/`, `data/test/` – seturi finale
+* `src/preprocessing/` – codul de preprocesare
+* `data/README.md` – descrierea dataset-ului
+
+---
+
+##  6. Stare Etapă (de completat de student)
+
+- [X] Structură repository configurată
+- [ ] Dataset analizat (EDA realizată)
+- [X] Date preprocesate
+- [ ] Seturi train/val/test generate
+- [ ] Documentație actualizată în README + `data/README.md`
+
+---
