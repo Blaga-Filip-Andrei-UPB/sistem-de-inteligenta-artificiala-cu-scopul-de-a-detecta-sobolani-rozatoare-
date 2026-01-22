@@ -236,7 +236,7 @@ Toate cele 3 module trebuie să **pornească și să ruleze fără erori** la pr
 - [X] Cod rulează fără erori: `python src/data_acquisition/generate.py` sau echivalent LabVIEW
 - [X] Generează CSV în format compatibil cu preprocesarea din Etapa 3
 - [X] Include minimum 40% date originale în dataset-ul final
-- [ ] Documentație în cod: ce date generează, cu ce parametri
+- [X] Documentație în cod: ce date generează, cu ce parametri
 
 #### **Modul 2: Neural Network Module**
 
@@ -314,7 +314,7 @@ proiect-rn-[nume-prenume]/
 - [X] Repository structurat conform modelului de mai sus (verificat consistență cu Etapa 3)
 
 ### Modul 1: Data Logging / Acquisition
-- [ ] Cod rulează fără erori (`python src/data_acquisition/...` sau echivalent LabVIEW)
+- [X] Cod rulează fără erori (`python src/data_acquisition/...` sau echivalent LabVIEW)
 - [X] Produce minimum 40% date originale din dataset-ul final
 - [X] CSV generat în format compatibil cu preprocesarea din Etapa 3
 - [ ] Documentație în `src/data_acquisition/README.md` cu:
