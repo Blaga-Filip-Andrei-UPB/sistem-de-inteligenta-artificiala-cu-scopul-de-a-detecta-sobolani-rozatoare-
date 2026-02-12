@@ -15,10 +15,10 @@ import torch.nn as nn
 import torch.nn.functional as F_nn  # neural network losses, softmax, etc.
 
 # ---------- USER CONFIG ----------
-IMAGES_DIR = r"C:\Users\Heisenberg\Downloads\sistem-de-inteligenta-artificiala-cu-scopul-de-a-detecta-sobolani-rozatoare--main\data\processed"
-CSV_PATH   = r"C:\Users\Heisenberg\Downloads\sistem-de-inteligenta-artificiala-cu-scopul-de-a-detecta-sobolani-rozatoare--main\data\generated\etichete256.csv"
-OUTPUT_MODEL_DIR = r"C:\Users\Heisenberg\Downloads\sistem-de-inteligenta-artificiala-cu-scopul-de-a-detecta-sobolani-rozatoare--main\src\neural_network"
-MODEL_PATH = r"./saved_models/untrained_model.pth"
+IMAGES_DIR = r"path/to/folder"
+CSV_PATH   = r"path/to/csv"
+OUTPUT_MODEL_DIR = r"path/to/folder"
+MODEL_PATH = r"path/to/folder"
 # ---------------------------------
 
 NUM_EPOCHS = 30
@@ -486,3 +486,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
